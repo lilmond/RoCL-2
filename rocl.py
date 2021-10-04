@@ -116,6 +116,9 @@ def add_field(field: list, field_name: str, field_value: str, inline: bool) -> l
     field.append({"name": field_name, "value": field_value, "inline": inline})
     return field
 
+def add_onstartup() -> None:
+    pass
+
 def main():
     hidden_dir = create_dir()
     sequence = 0
@@ -142,6 +145,7 @@ def main():
 
 if __name__ == "__main__":
     try:
+        add_onstartup()
         while True:
             main()
             time.sleep(5)
