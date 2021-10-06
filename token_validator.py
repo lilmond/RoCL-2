@@ -8,15 +8,15 @@ def check_token(token: str) -> None:
     user = html.find("meta", {"name": "user-data"})
 
     if not user:
-        print(f"\r\nERROR: invalid cookie\r\n")
+        print(f"\r\nERROR: invalid token\r\n")
         return
 
     info = "\r\n" \
     f"Username: {user.get('data-name')}\r\n" \
-    f"User ID:  {user.get('data-userid')}\r\n" \
-    f"Premium:  {user.get('data-ispremiumuser')}\r\n" \
+    f"User ID : {user.get('data-userid')}\r\n" \
+    f"Premium : {user.get('data-ispremiumuser')}\r\n" \
     f"Underage: {user.get('data-isunder13')}\r\n" \
-    f"Account:  {user.get('data-created')}\r\n"
+    f"Creation: {user.get('data-created')}\r\n"
 
     print(info)
 
