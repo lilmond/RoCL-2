@@ -1,3 +1,6 @@
+# NOTICE
+This program has been deprecated due to Roblox security updates. This is for educational purposes only.
+
 # RoCL-2
 Please don't hack people. It's illegal!
 
