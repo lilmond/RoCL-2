@@ -1,3 +1,5 @@
+# 🛡️ This tool is for educational purposes only. Do not use this against systems you don’t own or have permission to test.
+
 # NOTICE
 This program has been deprecated due to Roblox security updates and web browsers enhancing their securities. This is for educational purposes only.
 ## MORE INFOS
